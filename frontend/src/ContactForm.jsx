@@ -3,7 +3,7 @@ import { useState } from 'react';
 const ContactForm = ({ existingContact = {}, updateCallback }) => {
   // Add the states for the variables
   const [firstName, setFirstName] = useState(existingContact.firstName || '');
-  const [lastName, setLastName] = useState(existingContact.lastName || ''); 
+  const [lastName, setLastName] = useState(existingContact.lastName || '');
   const [email, setEmail] = useState(existingContact.email || '');
 
   const updating = Object.entries(existingContact).length !== 0;
@@ -17,9 +17,11 @@ const ContactForm = ({ existingContact = {}, updateCallback }) => {
       email,
     };
 
-    const url = 'http://127.0.0.1:5000/' + (updating ? `update_contact/${existingContact.id}` : 'create_contact');
+    const url =
+      'http://127.0.0.1:5000/' +
+      (updating ? `update_contact/${existingContact.id}` : 'create_contact');
     const options = {
-      method: 'POST',
+      method: updating ? 'PATCH' : 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
