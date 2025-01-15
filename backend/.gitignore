@@ -1,0 +1,10 @@
+# Virtual environment
+venv/
+
+# Instance folder (contains database and config)
+instance/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
