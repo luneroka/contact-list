@@ -4,7 +4,7 @@ const ContactForm = () => {
   // Add the states for the variables
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState();
+  const [email, setEmail] = useState('');
 
   const onSubmit = async (e) => {
     e.preventDefault();
